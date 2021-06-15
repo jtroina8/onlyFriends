@@ -36,8 +36,8 @@ export default function GameCard() {
             <h4>Gold 2</h4>
           </div>
 
-          <h4>Desired Rank: </h4>
-          <div className="val-card__user-rank-desired">
+          <h4>Peak Rank: </h4>
+          <div className="val-card__user-peak-rank">
             <img
               src="https://media.valorant-api.com/competitivetiers/564d8e28-c226-3180-6285-e48a390db8b1/17/largeicon.png"
               alt="plat-3"
@@ -69,9 +69,9 @@ export default function GameCard() {
             <h4>Server: </h4>
             <h3>East Coast (US)</h3>
           </div>
-          <div className="val-card__user-level">
-            <h4>Level: </h4>
-            <h3>Casual // Play for Fun</h3>
+          <div className="val-card__user-mode">
+            <h4>Mode: </h4>
+            <h3>Unrated</h3>
           </div>
         </div>
         <div className="val-card__user-comms">

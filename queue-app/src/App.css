@@ -116,6 +116,7 @@ body {
 
 .val-card__user-info {
   width: auto;
+  border: 1px solid black;
 }
 
 .val-card__user-info h3 {
@@ -152,17 +153,20 @@ body {
 
 .val-card__user-role {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-left: 5rem;
 }
 
 .val-card__user-server {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-right: 10rem;
 }
 
-.val-card__user-level {
+.val-card__user-mode {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-right: 5rem;
 }
 
 .val-card__user-comms {
@@ -173,64 +177,6 @@ body {
   width: 150px;
 }
 
-.val-card__req-info {
-  width: auto;
-}
-
-.val-card__req-info h3 {
-  display: grid;
-}
-
-.val-card__req-rank {
-  display: flex;
-  justify-content: space-around;
-}
-
-.val-card__req-rank img {
-  height: 200px;
-  width: 200px;
-}
-
-.val-card__req-characters {
-  display: flex;
-  justify-content: space-around;
-}
-
-.val-card__req-characters img {
-  height: 150px;
-  width: 150px;
-}
-
-.val-card__req-words {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  justify-content: center;
-}
-
-.val-card__req-role {
-  display: flex;
-  flex-direction: column;
-}
-
-.val-card__req-server {
-  display: flex;
-  flex-direction: column;
-}
-
-.val-card__req-level {
-  display: flex;
-  flex-direction: column;
-}
-
-.val-card__req-comms {
-}
-
-.val-card__req-comms img {
-  height: 150px;
-  width: 150px;
-}
 /* End of Game Card */
 
 /* End of Profile Page */
