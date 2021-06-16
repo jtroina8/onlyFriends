@@ -1,4 +1,6 @@
 import React from "react";
+import LogIn from "./LogIn";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
@@ -12,7 +14,9 @@ export default function Landing() {
         </p>
       </div>
       <div className="landing-buttons">
-        <button>Log In</button>
+        <Link to="/login">
+          <button>Log In</button>
+        </Link>
         <button>Sign Up</button>
       </div>
     </div>

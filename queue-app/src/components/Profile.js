@@ -14,7 +14,7 @@ export default function Profile() {
               Bolts.
             </p>
             <h4 className="profile-bio__pronouns">Pronouns: He/Him</h4>
-            <h4 className="profile-bio__age">Age: 20's</h4>
+            <h4 className="profile-bio__age">Age: 21+</h4>
           </div>
           <div className="profile-pic-container">
             <img
