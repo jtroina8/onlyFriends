@@ -10,6 +10,7 @@ export default function SignUp() {
       <input type="text" placeholder="Name" />
       <input type="text" placeholder="Email" />
       <input type="text" placeholder="Phone" />
+      <button>Sign Up</button>
     </div>
   );
 }

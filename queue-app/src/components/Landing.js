@@ -1,5 +1,4 @@
 import React from "react";
-import LogIn from "./LogIn";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
@@ -17,7 +16,9 @@ export default function Landing() {
         <Link to="/login">
           <button>Log In</button>
         </Link>
-        <button>Sign Up</button>
+        <Link to="/signup">
+          <button>Sign Up</button>
+        </Link>
       </div>
     </div>
   );

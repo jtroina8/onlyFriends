@@ -31,6 +31,9 @@ function App() {
           <Route path="/login">
             <LogIn />
           </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
           <Route path="/home" component={Home}>
             <Nav />
             <GamingBar setGame={setGame} />
