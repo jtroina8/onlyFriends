@@ -14,28 +14,32 @@ import GameCard from "./components/GameCard";
 import Landing from "./components/Landing";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
+import Nav from "./components/Nav";
 
 function App() {
   const [game, setGame] = useState("");
   return (
     <div className="App">
-      <Landing />
-      <SignUp />
-      <LogIn />
       <Router>
-        <nav className="nav-bar">
-          <Link to="/me">Profile</Link>
-          <Link to="/">Home</Link>
-          <Link to="/inbox">Inbox</Link>
-        </nav>
         <Switch>
-          <Route path="/" component={Home}>
-            <GamingBar setGame={setGame} />
-          </Route>
           <Route path="/me" component={Profile}>
+            <Nav />
             <Profile />
             <GameCard />
             {game === "" ? null : <GameCard />}
+          </Route>
+          <Route path="/login">
+            <LogIn />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/home" component={Home}>
+            <Nav />
+            <GamingBar setGame={setGame} />
+          </Route>
+          <Route path="/" component={Landing}>
+            <Landing />
           </Route>
         </Switch>
       </Router>
