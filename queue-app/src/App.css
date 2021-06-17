@@ -404,9 +404,10 @@ body {
 .val-card {
   background: #fbe1ea;
   padding: 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  margin-left: 20rem;
 }
 
 .val-card__info {
@@ -474,14 +475,9 @@ body {
   margin-right: 5rem;
 }
 
-.val-card__user-comms {
+.val-card__user-comms img {
   height: 100px;
   width: 100px;
-}
-
-.val-card__user-comms img {
-  height: 175px;
-  width: 175px;
 }
 
 /* End of Game Card */
