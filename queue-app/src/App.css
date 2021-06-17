@@ -330,9 +330,6 @@ body {
 /* End of Nav Bar */
 
 /* Profile Page */
-.profile {
-  /* border: 1px SOLID GREEN; */
-}
 
 /* Profile Page Header */
 .profile-header {
@@ -477,6 +474,8 @@ body {
 }
 
 .val-card__user-comms {
+  height: 100px;
+  width: 100px;
 }
 
 .val-card__user-comms img {
