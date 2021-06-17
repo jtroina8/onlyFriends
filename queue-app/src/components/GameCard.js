@@ -2,28 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function GameCard() {
-  const gameInfo = useSelector((state) => state.gameContent);
-  console.log(gameInfo);
   return (
     <div className="val-card">
-      {gameInfo.map((content) => (
-        <div className="val-card__info">
-          {/* {content.tiers.map((tier) => {
-            return (
-              <>
-                <img
-                  src={tier.largeIcon}
-                  alt={
-                    tier.largeIcon ? `tier ${tier.divisionName} ` : "No Icon"
-                  }
-                />
-                <p>{tier.divisionName}</p>
-              </>
-            );
-          })} */}
-          {/* <p>{content.role.displayName}</p> */}
-        </div>
-      ))}
+      <div className="val-card__info"></div>
       <div className="val-card__user-info">
         <h3>@shrek's info:</h3>
         <div className="val-card__user-rank">
@@ -35,7 +16,6 @@ export default function GameCard() {
             />
             <h4>Gold 2</h4>
           </div>
-
           <h4>Peak Rank: </h4>
           <div className="val-card__user-peak-rank">
             <img
