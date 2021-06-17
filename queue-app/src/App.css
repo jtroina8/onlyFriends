@@ -75,6 +75,7 @@ body {
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
 .landing-middle-content:before {
@@ -138,7 +139,6 @@ body {
 }
 
 .landing-sign-up {
-  background-color: #1aa1f5;
   color: #fff;
 }
 
@@ -146,12 +146,8 @@ body {
   background-color: #0f5d8d;
 }
 
-.landing-log-in {
-  background-color: #fff;
-}
-
 .landing-log-in:hover {
-  background-color: #d9ebf7;
+  background-color: #74818a;
 }
 /* end of right */
 
@@ -180,6 +176,141 @@ body {
 /* end of footer */
 
 /* end of landing page */
+
+/* Login Page */
+.log-in {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.log-in__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 50rem;
+  transform: translate(-50%, -50%);
+}
+
+.log-in__container img {
+  padding-top: 10rem;
+  height: 200px;
+  width: 400px;
+}
+
+.log-in__container h1 {
+  font-size: 2.8rem;
+  line-height: 4rem;
+  color: #fff;
+}
+
+.log-in__container input {
+  margin: 5px;
+  position: relative;
+}
+
+.log-in__input-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.log-in__input-container input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 50%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: #fff;
+}
+.log-in__input-container input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+
+.log-in__container button {
+  width: 50%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin: 30px;
+}
+
+.log-in__btn:hover {
+  background-color: #6c0b0b;
+}
+
+.log-in__container:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.log-in__container:active {
+  color: #000;
+}
+
+.log-in__container:hover:before {
+  opacity: 1;
+}
+
+.log-in__container:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* End of Login Page */
 
 /* Nav Bar */
 .nav-bar {
