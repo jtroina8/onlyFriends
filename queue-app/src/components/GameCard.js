@@ -35,7 +35,6 @@ export default function GameCard() {
             />
             <h4>Gold 2</h4>
           </div>
-
           <h4>Peak Rank: </h4>
           <div className="val-card__user-peak-rank">
             <img

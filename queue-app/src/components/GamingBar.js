@@ -1,16 +1,10 @@
 import React from "react";
-import fetchVALORANT from "../actions/valorantDataActions";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function GamingBar({ setGame }) {
-  const dispatch = useDispatch();
-  const valData = useSelector((state) => state.valorantDataReducer);
-  console.log(valData);
   return (
     <div>
       <div className="game-bar">
         <img
-          onClick={() => fetchVALORANT(dispatch, setGame)}
           className="val_boxart"
           src="https://cdn-ascope-prod.global.ssl.fastly.net/static/images/boxart_valorant_300x400.jpg"
           alt=""
@@ -61,7 +55,7 @@ export default function GamingBar({ setGame }) {
           alt=""
         />
       </div>
-      <div className="game-cards">{}</div>
+      <div className="game-cards"></div>
     </div>
   );
 }
