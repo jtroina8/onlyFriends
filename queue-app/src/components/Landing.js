@@ -6,16 +6,7 @@ export default function Landing() {
     <section className="landing-page">
       {/* left side */}
       <div className="landing-left">
-        <div className="landing-left__content">
-          <div>
-            <h1>Landing Page</h1>
-            <h2>Page where you can click either Log In or Sign Up</h2>
-            <p>
-              Log In will take you to a seperate page, while Sign Up will be a
-              pop up window.
-            </p>
-          </div>
-        </div>
+        <div className="landing-left__content"></div>
       </div>
       {/* end of left */}
       {/* right */}
