@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../models');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// GRABS A USER
+router.get('/', async function(req, res, next) {
+  const users = await db.User.findAll();
+  res.json(users);
 });
 
 // CREATES A USER
-router.post('/users', async (req, res) => {
+router.post('/register', async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
-  const newUser = await User.create({
+  const newUser = await db.User.create({
     firstName, 
     lastName, 
     email, 
