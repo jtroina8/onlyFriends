@@ -109,10 +109,6 @@ body {
   color: #000;
 }
 
-.landing-middle-content:active:after {
-  background: transparent;
-}
-
 .landing-middle-content:hover:before {
   opacity: 1;
 }
@@ -160,7 +156,7 @@ body {
 /* end of right */
 
 /* footer */
-.main-page-footer {
+/* .main-page-footer {
   grid-column: 1 / -1;
   grid-row: 2 / -1;
   background-color: #f5f4f4;
@@ -180,15 +176,15 @@ body {
   text-decoration: none;
   color: #444;
   font-weight: 300;
-}
+} */
 /* end of footer */
 
-/* end of main page */
+/* end of landing page */
 
 /* Nav Bar */
 .nav-bar {
   padding: 30px;
-  background: #fca4c4;
+  background: #29a7f5;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
