@@ -36,7 +36,7 @@ body {
 
 /* right */
 .landing-right {
-  grid-column: 2 / -1;
+  grid-column: 3 / -1;
   grid-row: 1 / 2;
   position: relative;
 }
@@ -228,7 +228,7 @@ body {
 .log-in__input-container input:focus {
   border: none;
   outline: none;
-  border-bottom: 1px solid #e74c3c;
+  border-bottom: 1px solid #6c0b0b;
 }
 
 .log-in__container button {
