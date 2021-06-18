@@ -3,7 +3,7 @@ module.exports =
 {
   "development": {
     "username": process.env.USERNAME, 
-    "password": null,
+    "password": process.env.PASSWORD || null,
     "database": "onlyfriends",
     "host": "127.0.0.1",
     "dialect": "postgres"
