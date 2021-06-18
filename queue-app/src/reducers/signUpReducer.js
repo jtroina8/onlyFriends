@@ -14,7 +14,7 @@ const signUpReducer = (state = userInitialState, action) => {
   switch (action.type) {
     case NEW_USER:
       return { ...state, username: action.payload.username };
-
+    
     default:
       return state;
   }
