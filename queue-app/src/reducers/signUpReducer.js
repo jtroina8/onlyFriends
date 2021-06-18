@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { NEW_USER } from "../action-types/newUserActionType";
 
 const userInitialState = {
