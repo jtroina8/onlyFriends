@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../actions/newUserActions";
 
@@ -11,6 +11,21 @@ export default function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON,
+    };
+    fetch("localhost:9000/register", requestOptions).then((response) =>
+      response.json()
+    );
+    // .then((data) => setPostId(data.id));
+
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, []);
 
   return (
     <div className="sign-up">
