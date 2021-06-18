@@ -2,8 +2,8 @@ import { VAL_CONTENT } from "../action-types/valorantActionTypes";
 
 export default async function fetchVALORANT(dispatch, setGame) {
   setGame("valorant");
-  const data = await fetch("https://valorant-api.com/v1/agents");
-  const valAgentsjson = await data.json();
+  const valAgentsData = await fetch("https://valorant-api.com/v1/agents");
+  const valAgentsjson = await valAgentsData.json();
 
   const valTierData = await fetch(
     "https://valorant-api.com/v1/competitivetiers"
