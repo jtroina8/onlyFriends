@@ -1,6 +1,8 @@
+require('dotenv').config()
+module.exports = 
 {
   "development": {
-    "username": "tatienmiller",
+    "username": process.env.USERNAME, 
     "password": null,
     "database": "onlyfriends",
     "host": "127.0.0.1",
