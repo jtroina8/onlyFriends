@@ -10,7 +10,7 @@ export default async function fetchVALORANT(dispatch, setGame) {
   );
   const valTierJson = await valTierData.json();
 
-  const combineValData = { ...valTierJson, ...valAgentsJson };
+  const valData = { ...valTierJson, ...valAgentsJson };
 
-  return dispatch({ type: VAL_CONTENT, payload: combineValData });
+  return dispatch({ type: VAL_CONTENT, payload: valData });
 }
