@@ -24,7 +24,6 @@ const signUpReducer = (state = userInitialState, action) => {
         lastName: action.payload.lastname,
         phone: action.payload.phone,
       };
-
     default:
       return state;
   }
