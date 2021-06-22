@@ -84,7 +84,7 @@ export default function SignUp() {
           placeholder="Phone"
           onChange={(e) => setPhone(e.target.value)}
         />
-        <button type="submit">
+        <button type="submi">
           Sign Up
         </button>
       </form>
