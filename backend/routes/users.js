@@ -38,8 +38,7 @@ router.post("/register", async (req, res) => {
     });
     // res.json({
     //   id: newUser.id,
-    // });
-    // res.redirect(307, "/login")
+    
   } catch {
     // res.redirect("/register");
     console.log("didn't redirect to login")
