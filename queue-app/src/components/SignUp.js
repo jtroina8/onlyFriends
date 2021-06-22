@@ -30,7 +30,7 @@ export default function SignUp() {
     <div className="sign-up">
       <div className="sign-up__container"></div>
       <h3>Sign Up for OnlyFriends</h3>
-      <form 
+      <form
         onSubmit={(e) => {
           const requestOptions = {
             method: "POST",
@@ -44,11 +44,13 @@ export default function SignUp() {
               phoneNumber: phone,
             }),
           };
+          const response = fetch(
             "http://localhost:9000/users/register",
             requestOptions
           );
-          history.push("/login")
-      }}>
+          history.push("/login");
+        }}
+      >
         <input
           type="text"
           placeholder="Username"
@@ -84,9 +86,7 @@ export default function SignUp() {
           placeholder="Phone"
           onChange={(e) => setPhone(e.target.value)}
         />
-        <button type="submi">
-          Sign Up
-        </button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );
