@@ -78,7 +78,7 @@ export default function SignUp() {
             }),
           };
           const response = await fetch(
-            "http://localhost:3000/login",
+            "http://localhost:9000/users/register",
             requestOptions
           );
           const data = await response.json();
