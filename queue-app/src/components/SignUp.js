@@ -5,14 +5,24 @@ import { setUser } from "../actions/newUserActions";
 export default function SignUp() {
   const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
-  const [passWord, setPassword] = useState("");
-  const [rePassword, setPassWord] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [eMail, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
+  const [pwError, setPwError] = useState("");
 
   useEffect(() => {}, []);
+
+  const passwordValidation = (e) => {
+    setConfirmPassword(e.target.value);
+    if (password !== confirmPassword) {
+      setPwError("Passwords do not match!");
+    } else {
+      setPwError("");
+    }
+  };
 
   return (
     <div className="sign-up">
@@ -31,7 +41,7 @@ export default function SignUp() {
       <input
         type="password"
         placeholder="Confirm Password"
-        onChange={(e) => setPassWord(e.target.value)}
+        onChange={(e) => passwordValidation(e)}
       />
       <input
         type="text"
@@ -62,13 +72,13 @@ export default function SignUp() {
               firstName: firstName,
               lastName: lastName,
               email: eMail,
-              password: passWord,
+              password: password,
               userName: userName,
               phoneNumber: phone,
             }),
           };
           const response = await fetch(
-            "http://localhost:9000/users/register",
+            "http://localhost:3000/users/login",
             requestOptions
           );
           const data = await response.json();
