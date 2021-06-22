@@ -14,7 +14,12 @@ export default function GamingBar({ setGame }) {
   return (
     <div>
       <div className="game-bar">
-        <img className="val_boxart" src={val_boxart} alt="" />
+        <img
+          className="val_boxart"
+          src={val_boxart}
+          alt=""
+          onClick={() => console.log("yo what up")}
+        />
         <img className="lol_boxart" src={lol_boxart} alt="" />
         <img className="apex_boxart" src={apex_boxart} alt="" />
         <img className="csgo_boxart" src={csgo_boxart} alt="" />
