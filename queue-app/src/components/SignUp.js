@@ -44,7 +44,6 @@ export default function SignUp() {
               phoneNumber: phone,
             }),
           };
-          const response = fetch(
             "http://localhost:9000/users/register",
             requestOptions
           );

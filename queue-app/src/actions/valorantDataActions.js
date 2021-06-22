@@ -1,7 +1,7 @@
 import { VAL_CONTENT } from "../action-types/valorantActionTypes";
 
-export default async function fetchVALORANT(dispatch, setGame) {
-  setGame("valorant");
+export default async function fetchVALORANT(dispatch) {
+  // setGame("valorant");
   const valAgentsData = await fetch("https://valorant-api.com/v1/agents");
   const valAgentsJson = await valAgentsData.json();
 
@@ -12,5 +12,5 @@ export default async function fetchVALORANT(dispatch, setGame) {
 
   const valData = { ...valTierJson, ...valAgentsJson };
 
-  return dispatch({ type: VAL_CONTENT, payload: valData });
+  return dispatch({ type: VAL_CONTENT, payload: valData.data });
 }

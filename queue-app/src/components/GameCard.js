@@ -1,10 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import fetchVALORANT from "../actions/valorantDataActions"
+
 
 export default function GameCard() {
+  const dispatch = useDispatch()
   const gameData = useSelector((state) => state.gameContent);
-  console.log(gameData);
-  return <div className="val-card"></div>;
+  useEffect(() => {fetchVALORANT(dispatch)}, [dispatch])
+
+  return (
+  <div className="val-card">
+    {gameData === [""] ? (""):(gameData[0].developerName)}
+  </div>)
 }
 
 // <div className="val-card">

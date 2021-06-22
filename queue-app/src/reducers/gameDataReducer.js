@@ -1,6 +1,6 @@
 import { VAL_CONTENT } from "../action-types/valorantActionTypes";
 
-const initialState = [];
+const initialState = [""];
 
 const gameContent = (state = initialState, action) => {
   switch (action.type) {
