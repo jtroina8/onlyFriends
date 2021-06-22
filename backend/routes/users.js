@@ -3,6 +3,16 @@ var router = express.Router();
 const db = require("../models");
 const bcrypt = require("bcrypt");
 
+const passport = require("passport");
+const initializePassport = require("../passport-config");
+
+// CONFIGURES PASSPORT AND FINDS USER BASED ON USERNAME
+initializePassport(
+  passport, 
+  userName => {
+    return newUser.find(user => user.userName === userName);
+});
+
 
 // GRABS A USER
 router.get("/", async function (req, res, next) {
