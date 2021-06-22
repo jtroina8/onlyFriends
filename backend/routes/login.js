@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 
 
-router.post("login", (req, res) => {
+router.post("/", (req, res) => {
 
 })
 
