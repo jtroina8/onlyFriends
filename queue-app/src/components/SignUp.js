@@ -23,6 +23,7 @@ export default function SignUp() {
       <h3>Sign Up for OnlyFriends</h3>
       <form
         onSubmit={(e) => {
+          e.preventDefault();
           const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -39,11 +40,12 @@ export default function SignUp() {
             "http://localhost:9000/users/register",
             requestOptions
           );
-          // if (password !== confirmPassword) {
-          //   setPwError("Passwords do not match!");
-          //   alert("Passwords do not match!");
-          // } else {
-          //   history.push("/login");
+          if (password !== confirmPassword) {
+            setPwError("Passwords do not match!");
+            alert("Passwords do not match!");
+          } else {
+            history.push("/login");
+          }
         }}
       >
         <input
