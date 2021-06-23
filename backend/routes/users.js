@@ -1,18 +1,37 @@
 var express = require("express");
 var router = express.Router();
 const db = require("../models");
-const bcrypt = require("bcrypt");
 
+const bcrypt = require("bcrypt");
 const passport = require("passport");
+const session = require('express-session');
 const initializePassport = require("../passport-config");
 
 // CONFIGURES PASSPORT AND FINDS USER BASED ON USERNAME
 initializePassport(
   passport, 
   userName => {
-    return newUser.find(user => user.userName === userName);
-});
+    newUser.find(user => user.userName === userName);
+  },
+  id => {
+    user.find(user => user.id === id);
+  } 
+);
 
+// // MIDDLEWARE
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   resave: false,
+//   saveUninitialized: false
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// LOGS USER IN
+router.post("/login", passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/login",
+}));
 
 // GRABS A USER
 router.get("/", async function (req, res, next) {
@@ -57,8 +76,5 @@ router.delete("/users/:id", async (req, res) => {
   res.json(deletedUser);
 });
 
-// server.listen(port, hostname, () => {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// });
 
 module.exports = router;
