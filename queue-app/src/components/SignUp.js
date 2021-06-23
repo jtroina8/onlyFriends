@@ -48,7 +48,12 @@ export default function SignUp() {
             "http://localhost:9000/users/register",
             requestOptions
           );
-          history.push("/login");
+          if (password !== confirmPassword) {
+            setPwError("Passwords do not match!");
+            alert("Passwords do not match!");
+          } else {
+            history.push("/login");
+          }
         }}
       >
         <input
@@ -64,7 +69,7 @@ export default function SignUp() {
         <input
           type="password"
           placeholder="Confirm Password"
-          onChange={(e) => passwordValidation(e)}
+          onChange={(e) => setConfirmPassword(e)}
         />
         <input
           type="text"
