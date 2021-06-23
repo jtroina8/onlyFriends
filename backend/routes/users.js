@@ -29,7 +29,7 @@ initializePassport(
 
 // LOGS USER IN
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/home",
   failureRedirect: "/login",
 }));
 
