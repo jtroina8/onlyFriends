@@ -402,7 +402,7 @@ body {
 
 /* Game Card */
 
-/* .val-card {
+.val-card {
   background: #fbe1ea;
   padding: 25px;
   display: flex;
@@ -479,7 +479,7 @@ body {
 .val-card__user-comms img {
   height: 100px;
   width: 100px;
-} */
+}
 
 /* End of Game Card */
 
