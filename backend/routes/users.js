@@ -1,37 +1,34 @@
 var express = require("express");
 var router = express.Router();
 const db = require("../models");
-
 const bcrypt = require("bcrypt");
-const passport = require("passport");
 const session = require('express-session');
-const initializePassport = require("../passport-config");
 
-// CONFIGURES PASSPORT AND FINDS USER BASED ON USERNAME
-initializePassport(
-  passport, 
-  userName => {
-    newUser.find(user => user.userName === userName);
-  },
-  id => {
-    user.find(user => user.id === id);
-  } 
-);
 
-// // MIDDLEWARE
-// app.use(session({
-//   secret: process.env.SESSION_SECRET,
-//   resave: false,
-//   saveUninitialized: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+router.post("/login", async (req, res) => {
+  const user = await db.User.findOne({
+    where: { userName: req.body.userName }
+  });
+  if (!user) {
+    return res.status(404).json({
+      error: "No user with that username found",
+    });
+  }
+  const match = await bcrypt.compare(req.body.password, user.password);
+  if (!match) {
+    return res.status(401).json({
+      error: "Password incorrect",
+    });
+  }
+  console.log(req.session)
+  req.session.user = user
+  res.json({
+    id: user.id,
+    userName: user.userName,
+    updatedAt: user.updatedAt,
+  });
+});
 
-// LOGS USER IN
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/home",
-  failureRedirect: "/login",
-}));
 
 // GRABS A USER
 router.get("/", async function (req, res, next) {
@@ -74,6 +71,30 @@ router.delete("/users/:id", async (req, res) => {
     },
   });
   res.json(deletedUser);
+});
+
+router.get("/current", (req, res) => {
+  const {user} = req.session;
+
+  if (user) {
+    res.json({
+      id: user.id,
+      userName: user.userName,
+      updatedAt: user.updatedAt,
+    });
+  }
+  else {
+    res.status(401).json({
+      error: "Not logged in",
+    });
+  }
+});
+
+router.get("/logout", (req, res) => {
+  req.session.user = null
+  res.json({
+    success: "Logged out successfully",
+  });
 });
 
 
