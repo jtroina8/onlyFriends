@@ -17,15 +17,6 @@ export default function SignUp() {
 
   useEffect(() => {}, []);
 
-  const passwordValidation = (e) => {
-    setConfirmPassword(e.target.value);
-    if (password !== confirmPassword) {
-      setPwError("Passwords do not match!");
-    } else {
-      setPwError("");
-    }
-  };
-
   return (
     <div className="sign-up">
       <div className="sign-up__container"></div>
@@ -48,12 +39,11 @@ export default function SignUp() {
             "http://localhost:9000/users/register",
             requestOptions
           );
-          if (password !== confirmPassword) {
-            setPwError("Passwords do not match!");
-            alert("Passwords do not match!");
-          } else {
-            history.push("/login");
-          }
+          // if (password !== confirmPassword) {
+          //   setPwError("Passwords do not match!");
+          //   alert("Passwords do not match!");
+          // } else {
+          //   history.push("/login");
         }}
       >
         <input
@@ -69,7 +59,7 @@ export default function SignUp() {
         <input
           type="password"
           placeholder="Confirm Password"
-          onChange={(e) => setConfirmPassword(e)}
+          onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <input
           type="text"
