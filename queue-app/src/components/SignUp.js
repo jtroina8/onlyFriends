@@ -19,72 +19,77 @@ export default function SignUp() {
 
   return (
     <div className="sign-up">
-      <div className="sign-up__container"></div>
-      <h3>Sign Up for OnlyFriends</h3>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const requestOptions = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              firstName: firstName,
-              lastName: lastName,
-              email: eMail,
-              password: password,
-              userName: userName,
-              phoneNumber: phone,
-            }),
-          };
-          const response = fetch(
-            "http://localhost:9000/users/register",
-            requestOptions
-          );
-          if (password !== confirmPassword) {
-            setPwError("Passwords do not match!");
-            alert("Passwords do not match!");
-          } else {
-            history.push("/login");
-          }
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="First Name"
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="tel"
-          placeholder="Phone"
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className="sign-up__container">
+        <h3>Sign Up for OnlyFriends</h3>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const requestOptions = {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: eMail,
+                password: password,
+                userName: userName,
+                phoneNumber: phone,
+              }),
+            };
+            const response = fetch(
+              "http://localhost:9000/users/register",
+              requestOptions
+            );
+            if (password !== confirmPassword) {
+              setPwError("Passwords do not match!");
+              alert("Passwords do not match!");
+            } else {
+              history.push("/login");
+            }
+          }}
+        >
+          <div className="sign-up__input-container">
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="First Name"
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="tel"
+              placeholder="Phone (3335554444)"
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <button type="submit" className="sign-up__btn">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
