@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function LogIn() {
   const history = useHistory();
@@ -22,7 +23,7 @@ export default function LogIn() {
                   password: password,
                   userName: userName,
                 }),
-              }
+              };
               const response = fetch(
                 "http://localhost:9000/users/login",
                 loginRequest
@@ -30,9 +31,22 @@ export default function LogIn() {
               history.push("/home");
             }}
           >
-            <input type="text" placeholder="Username, Phone, or Email" onChange={(e) => setUserName(e.target.value)} />
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit" className="log-in__btn">Log In</button>
+            <input
+              type="text"
+              placeholder="Username, Phone, or Email"
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="log-in__btn">
+              Log In
+            </button>
+            <Link to="/signup">
+              <button className="log-in__sign-up-btn">Sign Up</button>
+            </Link>
           </form>
         </div>
       </div>
