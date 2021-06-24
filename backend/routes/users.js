@@ -21,6 +21,7 @@ router.post("/login", async (req, res) => {
     });
   }
   console.log(req.session)
+  req.session.save();
   req.session.user = user
   res.json({
     id: user.id,
