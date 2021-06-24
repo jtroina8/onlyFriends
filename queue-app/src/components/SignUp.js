@@ -37,7 +37,7 @@ export default function SignUp() {
               }),
             };
             const response = fetch(
-              "http://localhost:9000/users/register",
+              "/users/register",
               requestOptions
             );
             if (password !== confirmPassword) {
