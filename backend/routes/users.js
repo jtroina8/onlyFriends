@@ -4,7 +4,6 @@ const db = require("../models");
 const bcrypt = require("bcrypt");
 const session = require('express-session');
 
-
 router.post("/login", async (req, res) => {
   const user = await db.User.findOne({
     where: { userName: req.body.userName }
