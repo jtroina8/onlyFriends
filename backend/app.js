@@ -15,10 +15,6 @@ const { User } = require('./models');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const loginRouter = require('./routes/login');
-
-const passport = require("passport");
-const { REPL_MODE_SLOPPY } = require('repl');
 
 const app = express();
 
@@ -26,10 +22,18 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+// app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(function(req, res, next) {
+  res.header('Content-Type', 'application/json;charset=UTF-8')
+  res.header('Access-Control-Allow-Credentials', true)
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
 // const initializePassport = require("../passport-config");
 
 // // CONFIGURES PASSPORT AND FINDS USER BASED ON USERNAME
@@ -38,22 +42,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   userName => {
 //     return newUser.find(user => user.userName === userName);
 // });
+// app.use(cors({ origin: (orig, cb) => cb(null, true), credentials: true }));
 
 const store = new SequelizeStore({db: models.sequelize});
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   store: store,
 }));
 store.sync();
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login', loginRouter);
-
 
 module.exports = app;
