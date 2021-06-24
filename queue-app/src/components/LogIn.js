@@ -1,11 +1,49 @@
 import React, { useEffect, useState } from "react";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
 import { useHistory } from "react-router-dom";
+import { setUser } from "../actions/newUserActions";
+import { useDispatch } from "react-redux";
 
-export default function LogIn() {
+export default function Login() {
+  const dispatch = useDispatch();
+
+  async function loginUser(credentials) {
+    return fetch("/users/login", {
+      method: "POST",
+      withCredentials: true,
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+  .then(res => res.json())
+  .then((data) => {
+    if (data.error) {
+      alert(data.error)
+    } else {
+      alert("User logged in successfully")
+      setUser(dispatch, data)
+    }
+  })
+}
+
   const history = useHistory();
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await loginUser({
+      userName,
+      password,
+    });
+    if (token !== null) {
+      history.push("./home");
+    } else {
+      alert("Incorrect username or password");
+    }
+  }
+
 
   return (
     <div className="log-in">
@@ -13,23 +51,7 @@ export default function LogIn() {
         <img src={OnlyFriends} alt="" />
         <h1>Log In to OnlyFriends</h1>
         <div className="log-in__input-container">
-          <form
-            onSubmit={(e) => {
-              const loginRequest = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  password: password,
-                  userName: userName,
-                }),
-              }
-              const response = fetch(
-                "http://localhost:9000/users/login",
-                loginRequest
-              );
-              history.push("/home");
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Username, Phone, or Email" onChange={(e) => setUserName(e.target.value)} />
             <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             <button type="submit" className="log-in__btn">Log In</button>
@@ -39,3 +61,4 @@ export default function LogIn() {
     </div>
   );
 }
+
