@@ -7,7 +7,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const cors = require('cors');
+// const cors = require('cors');
 const session = require('express-session');
 const Sequelize = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -34,15 +34,6 @@ app.use(function(req, res, next) {
   )
   next()
 })
-// const initializePassport = require("../passport-config");
-
-// // CONFIGURES PASSPORT AND FINDS USER BASED ON USERNAME
-// initializePassport(
-//   passport, 
-//   userName => {
-//     return newUser.find(user => user.userName === userName);
-// });
-// app.use(cors({ origin: (orig, cb) => cb(null, true), credentials: true }));
 
 const store = new SequelizeStore({db: models.sequelize});
 app.use(session({

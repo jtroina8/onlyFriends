@@ -14,39 +14,18 @@ router.get("/", async function (req, res, next) {
 router.post("/register", async (req, res) => {
   const { firstName, lastName, email, password, userName, phoneNumber } =
     req.body;
-  // try {
-  const isUserUnique = async (username) => {
-      await db.User.findOne({
-      where: { userName: username }
-    });
-  }
-  if (isUserUnique(userName) === null) {
-    console.log("NOT FOUND!!!");
-  } else {
-    console.log("USER EXISTS!!!");
-  }
-  
 
-  
+  const saltRounds = 10;
+  const PASSWORD_BCRYPT = await bcrypt.hash(password, saltRounds);
 
-    const saltRounds = 10;
-    const PASSWORD_BCRYPT = await bcrypt.hash(password, saltRounds);
- 
-    const newUser = await db.User.create({
-      firstName,
-      lastName,
-      email,
-      password: PASSWORD_BCRYPT,
-      userName,
-      phoneNumber,
-    });
-  
-
-  // } catch {
-    // res.redirect("/register");
-    // console.log("didn't redirect to login")
-  // }
-  
+  const newUser = await db.User.create({
+    firstName,
+    lastName,
+    email,
+    password: PASSWORD_BCRYPT,
+    userName,
+    phoneNumber,
+  });
 });
 
 // DELETES A USER
