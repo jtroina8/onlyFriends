@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import SignUp from "./SignUp";
+import { useState } from "react";
 
 export default function Landing() {
+  const [modalIsOpen, setIsOpen] = useState(false);
   return (
     <section className="landing-page">
       {/* left side */}
@@ -16,9 +20,21 @@ export default function Landing() {
           <Link to="/login">
             <button className="landing-log-in">Log In</button>
           </Link>
-          <Link to="/signup">
-            <button className="landing-sign-up">Sign Up</button>
-          </Link>
+          {/* <Link to="/signup"> */}
+          <button
+            className="landing-sign-up"
+            onClick={() => setIsOpen(!modalIsOpen)}
+          >
+            Sign Up
+          </button>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={() => setIsOpen(false)}
+            className="Modal"
+          >
+            <SignUp />
+          </Modal>
+          {/* </Link> */}
           <h4>You know you want to. ;)</h4>
         </div>
       </div>
