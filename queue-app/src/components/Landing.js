@@ -27,11 +27,14 @@ export default function Landing() {
           >
             Sign Up
           </button>
-          <Modal isOpen={modalIsOpen} onRequestClose={() => setIsOpen(false)}>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={() => setIsOpen(false)}
+            className="Modal"
+          >
             <SignUp />
           </Modal>
           {/* </Link> */}
-
           <h4>You know you want to. ;)</h4>
         </div>
       </div>
