@@ -4,6 +4,42 @@ const db = require("../models");
 const bcrypt = require("bcrypt");
 const session = require('express-session');
 
+// GRABS A USER
+router.get("/", async function (req, res, next) {
+  const users = await db.User.findAll();
+  res.json(users);
+});
+
+// CREATES A USER
+router.post("/register", async (req, res) => {
+  const { firstName, lastName, email, password, userName, phoneNumber } =
+    req.body;
+
+  const saltRounds = 10;
+  const PASSWORD_BCRYPT = await bcrypt.hash(password, saltRounds);
+
+  const newUser = await db.User.create({
+    firstName,
+    lastName,
+    email,
+    password: PASSWORD_BCRYPT,
+    userName,
+    phoneNumber,
+  });
+});
+
+// DELETES A USER
+router.delete("/users/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedUser = await User.destroy({
+    where: {
+      id,
+    },
+  });
+  res.json(deletedUser);
+});
+
+// ALLOWS A USER TO LOGIN
 router.post("/login", async (req, res) => {
   const user = await db.User.findOne({
     where: { userName: req.body.userName }
@@ -29,50 +65,7 @@ router.post("/login", async (req, res) => {
   });
 });
 
-
-// GRABS A USER
-router.get("/", async function (req, res, next) {
-  const users = await db.User.findAll();
-  res.json(users);
-});
-
-// CREATES A USER
-router.post("/register", async (req, res) => {
-  const { firstName, lastName, email, password, userName, phoneNumber } =
-    req.body;
-  try {
-    const saltRounds = 10;
-    const PASSWORD_BCRYPT = await bcrypt.hash(password, saltRounds);
- 
-    const newUser = await db.User.create({
-      firstName,
-      lastName,
-      email,
-      password: PASSWORD_BCRYPT,
-      userName,
-      phoneNumber,
-    });
-    // res.json({
-    //   id: newUser.id,
-    
-  } catch {
-    // res.redirect("/register");
-    console.log("didn't redirect to login")
-  }
-  
-});
-
-// DELETES A USER
-router.delete("/users/:id", async (req, res) => {
-  const { id } = req.params;
-  const deletedUser = await User.destroy({
-    where: {
-      id,
-    },
-  });
-  res.json(deletedUser);
-});
-
+// GETS CURRENT LOGGED IN USER
 router.get("/current", (req, res) => {
   const {user} = req.session;
 
@@ -90,6 +83,7 @@ router.get("/current", (req, res) => {
   }
 });
 
+// LOGS OUT USER 
 router.get("/logout", (req, res) => {
   req.session.user = null
   res.json({
