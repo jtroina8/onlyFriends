@@ -1,13 +1,12 @@
 body {
   text-align: center;
-  /* border: 3px solid gray; */
-  background-color: #111;
+  background-color: #000524;
   height: 100%;
   width: 100%;
 }
 
 /* Landing Page */
-/* main page */
+
 .landing-page {
   width: 100%;
   height: 100vh;
@@ -40,6 +39,7 @@ body {
   grid-column: 3 / -1;
   grid-row: 1 / 2;
   position: relative;
+  background-color: rgb(7, 7, 7);
 }
 
 .landing-middle-content {
@@ -320,7 +320,11 @@ body {
 }
 
 /* End of Login Page */
-/* Sign Up / Register Page */
+/* Sign Up || Register Page */
+.Modal {
+  background-color: green;
+}
+
 .sign-up {
   display: flex;
   align-items: center;
@@ -393,8 +397,7 @@ body {
 
 /* Nav Bar */
 .nav-bar {
-  padding: 30px;
-  background: #29a7f5;
+  background: #19192e;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -406,10 +409,16 @@ body {
   font-size: 20px;
 }
 
+.nav-bar img {
+  margin-top: -70px;
+  margin-bottom: -65px;
+  height: 200px;
+  width: auto;
+}
+
 /* End of Nav Bar */
 
 /* Profile Page */
-
 /* Profile Page Header */
 .profile-header {
   position: relative;
@@ -436,11 +445,9 @@ body {
   position: relative;
   width: 12rem;
   height: 12rem;
-  /* border: 1px solid red; */
 }
 
 .profile-bio {
-  /* border: 1px solid blue; */
   position: relative;
   background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-red-minimalist-cute-banner-image_168442.jpg");
 }
@@ -450,36 +457,7 @@ body {
 }
 /* End of Profile Page Header */
 
-/* Gaming Bar */
-.game-bar {
-  background: #fb9bb3;
-  display: flex;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  padding: 13px;
-}
-
-.game-bar::-webkit-scrollbar {
-  display: none;
-}
-
-.game-bar img {
-  object-fit: contain;
-  width: 100%;
-  max-height: 300px;
-  transition: transform 450ms;
-  margin-right: 15px;
-  cursor: pointer;
-}
-
-.game-bar img:hover {
-  transform: scale(1.08);
-}
-
-/* End of Gaming Bar */
-
 /* Game Card */
-
 .val-card {
   background: #fbe1ea;
   padding: 25px;
@@ -562,3 +540,64 @@ body {
 /* End of Game Card */
 
 /* End of Profile Page */
+
+/* Main Page */
+/* Gaming Bar */
+.game-bar {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 13px;
+  background-color: #000524;
+}
+
+.game-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.game-bar img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 250px;
+  transition: transform 450ms;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.game-bar img:hover {
+  transform: scale(1.08);
+}
+/* End of Gaming Bar */
+
+/* Message Window */
+.message {
+  display: inline-block;
+  position: relative;
+  width: 63%;
+}
+
+.message__window {
+  background-color: #fff;
+  opacity: 50%;
+  height: 40rem;
+}
+
+.message input {
+  width: 100%;
+  height: 30px;
+}
+
+/* End of Message Window */
+/* Queue Request Window */
+.request {
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+  opacity: 15%;
+  width: 35%;
+  height: 40rem;
+}
+
+/* End of Queue Request Window */
+
+/* End of Main Page */

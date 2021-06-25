@@ -9,6 +9,9 @@ import Landing from "./components/Landing";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import Nav from "./components/Nav";
+import Messages from "./components/Messages";
+import Request from "./components/Request";
+import Inbox from "./components/Inbox";
 
 function App() {
   const [game, setGame] = useState("");
@@ -25,12 +28,14 @@ function App() {
           <Route path="/login">
             <LogIn />
           </Route>
-          <Route path="/signup">
-            <SignUp />
+          <Route path="/inbox">
+            <Inbox />
           </Route>
           <Route path="/home" component={Home}>
             <Nav />
             <GamingBar setGame={setGame} />
+            <Messages />
+            <Request />
           </Route>
           <Route path="/" component={Landing}>
             <Landing />
