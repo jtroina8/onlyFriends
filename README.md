@@ -6,10 +6,10 @@ So I asked myself, "How can I fix this problem? How can I, a 20-something year o
 
 There are plenty of answers. Facebook group, Discord server, ask on Reddit. None of these have ever really worked out for me for the following reasons:
 
-Unknown rank: People will lie about their current rank in order to play in "higher elo" games, which will usually equate to a loss.
-Unknown behavior: You never know what you're going to get as far as the toxic level of a gamer. Somebody can be really great at the game, but if they're going to yell at your teammates, do you really want to queue with them?
-Servers: It's great to find new friends, but when you live in West Coast USA, and your bestie is all the way in EU? No one wants to play with that kind of lag!
-I created OnlyFriends.gg to conquer these problems. To have a social medium for people to gather and talk about whataver is currently popular in their communities.
+- Unknown rank: People will lie about their current rank in order to play in "higher elo" games, which will usually equate to a loss.
+- Unknown behavior: You never know what you're going to get as far as the toxic level of a gamer. Somebody can be really great at the game, but if they're going to yell at your teammates, do you really want to queue with them?
+- Servers: It's great to find new friends, but when you live in West Coast USA, and your bestie is all the way in EU? No one wants to play with that kind of lag!
+  I created OnlyFriends.gg to conquer these problems. To have a social medium for people to gather and talk about whataver is currently popular in their communities.
 
 ### Screenshots
 
@@ -49,5 +49,5 @@ I created OnlyFriends.gg to conquer these problems. To have a social medium for 
 
 | Name          | Email                   | Twitter    |
 | ------------- | ----------------------- | ---------- |
-| Tatien Miller | tatmil99@gmail.com      | @TatienM   |
 | Joey Troina   | Jtroinacoding@gmail.com | @joeytroey |
+| Tatien Miller | tatmil99@gmail.com      | @TatienM   |
