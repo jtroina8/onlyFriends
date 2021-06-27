@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
 import { useHistory } from "react-router-dom";
 import { setUser } from "../actions/newUserActions";
@@ -51,7 +52,9 @@ export default function Login() {
     <div className="log-in__bg">
       <div className="log-in">
         <div className="log-in__container">
-          <img src={OnlyFriends} alt="" />
+          <Link to="/">
+            <img src={OnlyFriends} alt="" />
+          </Link>
           <h1>Log In to OnlyFriends</h1>
           <div className="log-in__input-container">
             <form onSubmit={handleSubmit}>

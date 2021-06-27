@@ -179,6 +179,12 @@ body {
 /* end of landing page */
 
 /* Login Page */
+.log-in__bg {
+  background-color: rgb(7, 7, 7);
+  height: 55.6rem;
+  width: auto;
+}
+
 .log-in {
   display: flex;
   align-items: center;
@@ -336,13 +342,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 55%;
-  height: 50rem;
+  width: 50%;
+  height: 30rem;
   transform: translate(-50%, -50%);
 }
 
-.sign-up__container h3 {
-  color: #fff;
+.sign-up__container h2 {
+  color: rgb(0, 0, 0);
 }
 
 .sign-up__container input {
@@ -407,11 +413,14 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: -30px;
+  color: rgb(0, 116, 205);
 }
 
 .nav-bar img {
-  margin-top: -70px;
-  margin-bottom: -65px;
+  margin-top: -95px;
+  margin-bottom: -35px;
   height: 200px;
   width: auto;
 }
@@ -420,41 +429,29 @@ body {
 
 /* Profile Page */
 /* Profile Page Header */
-.profile-header {
+.profile__banner {
   position: relative;
-  display: grid;
 }
 
-.profile-banner {
-  /* border: 1px solid pink; */
-  width: 100%;
-  background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-red-minimalist-cute-banner-image_168442.jpg");
+.profile__banner-info {
+  display: block;
 }
 
-.profile-header__info {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.profile__banner-container {
+  background: url("https://d2pi5ijasmgfet.cloudfront.net/1920x510/filters:focal(2254x811:2256x813):quality(82):sharpen(0.5,0.5,true)/production%2Fpublic%2Fhero%2FBanner_5000x1800.psd-3.jpg");
+  background-size: 100% 100%;
+  height: 20rem;
 }
 
-.profile-pic-container {
-  background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-red-minimalist-cute-banner-image_168442.jpg");
-}
-
-.profile-pic {
+.profile__pic {
   border-radius: 50%;
+  border: 4px solid #fff;
   position: relative;
   width: 12rem;
   height: 12rem;
+  margin-top: 60px;
 }
 
-.profile-bio {
-  position: relative;
-  background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-red-minimalist-cute-banner-image_168442.jpg");
-}
-
-.profile-bio img {
-  width: 100%;
-}
 /* End of Profile Page Header */
 
 /* Game Card */
