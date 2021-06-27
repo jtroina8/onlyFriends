@@ -7,7 +7,6 @@ import GamingBar from "./components/GamingBar";
 import GameCard from "./components/GameCard";
 import Landing from "./components/Landing";
 import LogIn from "./components/LogIn";
-import SignUp from "./components/SignUp";
 import Nav from "./components/Nav";
 import Messages from "./components/Messages";
 import Request from "./components/Request";

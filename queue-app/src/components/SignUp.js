@@ -20,7 +20,7 @@ export default function SignUp() {
   return (
     <div className="sign-up">
       <div className="sign-up__container">
-        <h3>Sign Up for OnlyFriends</h3>
+        <h2>Sign Up for OnlyFriends</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -36,10 +36,7 @@ export default function SignUp() {
                 phoneNumber: phone,
               }),
             };
-            const response = fetch(
-              "/users/register",
-              requestOptions
-            );
+            const response = fetch("/users/register", requestOptions);
             if (password !== confirmPassword) {
               setPwError("Passwords do not match!");
               alert("Passwords do not match!");
