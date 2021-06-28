@@ -647,7 +647,7 @@ body {
   --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
   --primary-hue: 330;
   --primary-lightness: 50;
-  --color: #004b7d;
+  /* --color: #004b7d; */
   --font-size: 26px;
   --shadow-primary-hue: 180;
   --label-size: 9px;
