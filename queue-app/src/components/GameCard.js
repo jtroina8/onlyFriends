@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import fetchVALORANT from "../actions/valorantDataActions";
+import valReyna from "./assets/images/characters/valReyna.png";
+import valPhoenix from "./assets/images/characters/valPhoenix.png";
 
 export default function GameCard() {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ export default function GameCard() {
       <div className="val-card">
         <div className="val-card__info"></div>
         <div className="val-card__user-info">
-          <h3>@shrek's info:</h3>
+          <h2>VALORANT:</h2>
           <div className="val-card__user-rank">
             <h4>Rank: </h4>
             <div className="val-card__user-rank-symbol">
@@ -23,7 +25,7 @@ export default function GameCard() {
                 alt="gold-2"
               />
             </div>
-            <h4>Peak Rank: </h4>
+            <h4>Peak: </h4>
             <div className="val-card__user-peak-rank">
               <img
                 src="https://media.valorant-api.com/competitivetiers/564d8e28-c226-3180-6285-e48a390db8b1/17/largeicon.png"
@@ -35,29 +37,29 @@ export default function GameCard() {
             <h4>Mains: </h4>
             <img
               src={gameData === [""] ? "" : gameData[0].displayIconSmall}
-              alt="jett-pic"
+              alt="breach-pic"
             />
-            <img
-              src={gameData === [""] ? "" : gameData[0].displayIconSmall}
-              alt="phoenix-pic"
-            />
-            <img
-              src={gameData === [""] ? "" : gameData[0].displayIconSmall}
-              alt="reyna-pic"
-            />
+            <img src={valPhoenix} alt="phoenix-pic" />
+            <img src={valReyna} alt="reyna-pic" />
           </div>
-          {/* <div className="val-card__user-words">
-            <div className="val-card__user-role">
-              <h4>Role: </h4>
-              <h3>{gameData === [""] ? "" : gameData[0].role.displayName}</h3>
+          <div className="val-card__user-words">
+            <div className="val-card__user-stats">
+              <div className="val-card__user-wr">
+                <h4>Win Rate: </h4>
+                <h1> 55.3%</h1>
+              </div>
+              <div className="val-card__user-weapon">
+                <h4>Weapon of Choice:</h4>
+                <h1>Vandal</h1>
+              </div>
             </div>
-          </div> */}
-          <div className="val-card__user-comms">
+          </div>
+          {/* <div className="val-card__user-comms">
             <img
               src="https://static.thenounproject.com/png/55394-200.png"
               alt="no-mic-symbol"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
