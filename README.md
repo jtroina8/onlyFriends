@@ -13,6 +13,14 @@ There are plenty of answers. Facebook group, Discord server, ask on Reddit. None
 
 ### Screenshots
 
+<img src="https://github.com/jtroina8/onlyFriends/readme-imgs/register.png" width="300" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/readme-imgs/login.png" width="300" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/readme-imgs/home.png" width="300" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/readme-imgs/profile.png" width="300" height="300">
+
 ### Tools/Technologies Used
 
 **Built With:**
