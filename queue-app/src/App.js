@@ -28,6 +28,7 @@ function App() {
             <LogIn />
           </Route>
           <Route path="/inbox">
+            <Nav />
             <Inbox />
           </Route>
           <Route path="/home" component={Home}>
