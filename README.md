@@ -13,6 +13,14 @@ There are plenty of answers. Facebook group, Discord server, ask on Reddit. None
 
 ### Screenshots
 
+<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/register.png" width="500" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/login.png" width="500" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/home.png" width="500" height="300">
+
+<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/profile.png" width="500" height="300">
+
 ### Tools/Technologies Used
 
 **Built With:**
@@ -51,3 +59,10 @@ There are plenty of answers. Facebook group, Discord server, ask on Reddit. None
 | ------------- | ----------------------- | ---------- |
 | Joey Troina   | Jtroinacoding@gmail.com | @joeytroey |
 | Tatien Miller | tatmil99@gmail.com      | @TatienM   |
+
+### Medium article
+
+This isn't really an article about what our project does, but more so an article about my thoughts on virtual coding bootcamps. Check it out if you would like!
+
+<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/medium-pic.png" height="300" width="350">
+https://medium.com/@tatmil99/are-online-coding-bootcamps-worth-it-d106249a326b
