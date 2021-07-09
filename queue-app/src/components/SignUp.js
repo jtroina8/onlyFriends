@@ -1,86 +1,78 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setUser } from "../actions/newUserActions";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import useForm from "./SignUpForm";
+import validate from "./ValidateInfo";
+// import { useDispatch } from "react-redux";
+// import { setUser } from "../actions/newUserActions";
+// import { useHistory } from "react-router-dom";
 
-export default function SignUp() {
-  const dispatch = useDispatch();
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [eMail, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [pwError, setPwError] = useState("");
-  const history = useHistory();
-
-  useEffect(() => {}, []);
+export default function SignUp({ submitSignUp }) {
+  const { handleChange, userInfo, handleSubmit, errors } = useForm(
+    submitSignUp,
+    validate
+  );
 
   return (
     <div className="sign-up">
       <div className="sign-up__container">
         <h2>Sign Up for OnlyFriends</h2>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const requestOptions = {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                firstName: firstName,
-                lastName: lastName,
-                email: eMail,
-                password: password,
-                userName: userName,
-                phoneNumber: phone,
-              }),
-            };
-            const response = fetch("/users/register", requestOptions);
-            if (password !== confirmPassword) {
-              setPwError("Passwords do not match!");
-              alert("Passwords do not match!");
-            } else {
-              history.push("/login");
-            }
-          }}
-        >
+        <form onSubmit={handleSubmit}>
           <div className="sign-up__input-container">
             <input
               type="text"
+              name="username"
               placeholder="Username"
-              onChange={(e) => setUserName(e.target.value)}
+              value={userInfo.username}
+              onChange={handleChange}
             />
+            {errors.username && <p>{errors.username}</p>}
             <input
               type="password"
+              name="password"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              value={userInfo.password}
+              onChange={handleChange}
             />
+            {errors.password && <p>{errors.password}</p>}
             <input
               type="password"
+              name="confirmPassword"
               placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={userInfo.confimPassword}
+              onChange={handleChange}
             />
+            {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
             <input
               type="text"
+              name="firstName"
               placeholder="First Name"
-              onChange={(e) => setFirstName(e.target.value)}
+              value={userInfo.firstName}
+              onChange={handleChange}
             />
+            {errors.firstName && <p>{errors.firstName}</p>}
             <input
               type="text"
+              name="lastName"
               placeholder="Last Name"
-              onChange={(e) => setLastName(e.target.value)}
+              value={userInfo.lastName}
+              onChange={handleChange}
             />
+            {errors.lastName && <p>{errors.lastName}</p>}
             <input
               type="email"
+              name="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
+              value={userInfo.email}
+              onChange={handleChange}
             />
+            {errors.email && <p>{errors.email}</p>}
             <input
               type="tel"
+              name="phoneNumber"
               placeholder="Phone (3335554444)"
-              onChange={(e) => setPhone(e.target.value)}
+              value={userInfo.phoneNumber}
+              onChange={handleChange}
             />
+            {errors.phoneNumber && <p>{errors.phoneNumber}</p>}
             <button type="submit" className="sign-up__btn">
               Sign Up
             </button>

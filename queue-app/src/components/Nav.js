@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faInbox } from "@fortawesome/free-solid-svg-icons";
+import { faInbox } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
   return (
