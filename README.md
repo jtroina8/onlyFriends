@@ -25,44 +25,6 @@ There are plenty of answers. Facebook group, Discord server, ask on Reddit. None
 
 **Built With:**
 
-- HTML, CSS
+- HTML / CSS
 - JavaScript(es6)
-- React, Redux
-- Node.js
-- Express.js
-- Sequelize ORM
-- PostgreSQL
-- bcrypt
-- User authentication using session and cookies
-
-### Key Features
-
-- **Register/Login System**
-- **CRUD Functionality**
-- **Messaging System(soon to come)**
-- **AJAX**
-- **RestAPIs**
-
-### Acknowledgements
-
-- VALORANT API
-- Stack Overflow
-- sequelize.org
-- npmjs.com
-- medium
-- MDN
-- YouTube
-
-### Contributors
-
-| Name          | Email                   | Twitter    |
-| ------------- | ----------------------- | ---------- |
-| Joey Troina   | Jtroinacoding@gmail.com | @joeytroey |
-| Tatien Miller | tatmil99@gmail.com      | @TatienM   |
-
-### Medium article
-
-This isn't really an article about what our project does, but more so an article about my thoughts on virtual coding bootcamps. Check it out if you would like!
-
-<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/medium-pic.png" height="300" width="350">
-https://medium.com/@tatmil99/are-online-coding-bootcamps-worth-it-d106249a326b
+- React / Redux
