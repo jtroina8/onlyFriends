@@ -183,7 +183,7 @@ body {
 /* Login Page */
 .log-in__bg {
   background-color: rgb(7, 7, 7);
-  height: 55.6rem;
+  height: 61.8rem;
   width: auto;
 }
 
@@ -356,6 +356,10 @@ body {
 .sign-up__container input {
   margin: 5px;
   position: relative;
+}
+
+.sign-up__container p {
+  color: purple;
 }
 
 .sign-up__input-container {

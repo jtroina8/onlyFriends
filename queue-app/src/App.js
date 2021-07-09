@@ -14,6 +14,7 @@ import Inbox from "./components/Inbox";
 
 function App() {
   const [game, setGame] = useState("");
+
   return (
     <div className="App">
       <Router>

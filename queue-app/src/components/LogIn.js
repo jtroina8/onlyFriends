@@ -1,52 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
-import { useHistory } from "react-router-dom";
-import { setUser } from "../actions/newUserActions";
-import { useDispatch } from "react-redux";
+// import { useHistory } from "react-router-dom";
+// import { setUser } from "../actions/newUserActions";
+// import { useDispatch } from "react-redux";
 import Modal from "react-modal";
 import SignUp from "./SignUp";
+import SignUpSuccess from "./SignUpSuccess";
 
 export default function Login() {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const dispatch = useDispatch();
+  const [modalIsOpen, setIsOpen] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(false);
 
-  async function loginUser(credentials) {
-    return fetch("/users/login", {
-      method: "POST",
-      withCredentials: true,
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          alert(data.error);
-        } else {
-          alert("User logged in successfully");
-          setUser(dispatch, data);
-        }
-      });
+  function submitSignUp() {
+    setIsSubmit(true);
   }
-
-  const history = useHistory();
-  const [userName, setUserName] = useState();
-  const [password, setPassword] = useState();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = await loginUser({
-      userName,
-      password,
-    });
-    if (token !== null) {
-      history.push("./home");
-    } else {
-      alert("Incorrect username or password");
-    }
-  };
 
   return (
     <div className="log-in__bg">
@@ -57,17 +25,12 @@ export default function Login() {
           </Link>
           <h1>Log In to OnlyFriends</h1>
           <div className="log-in__input-container">
-            <form onSubmit={handleSubmit}>
+            <form>
               <input
                 type="text"
-                placeholder="Username, Phone, or Email"
-                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Please Enter 'Shrek' as Username"
               />
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <input type="password" placeholder="Password is 'myswamp123" />
               <button type="submit" className="log-in__btn">
                 Log In
               </button>
@@ -82,7 +45,12 @@ export default function Login() {
                 onRequestClose={() => setIsOpen(false)}
                 className="Modal"
               >
-                <SignUp />
+                {/* <SignUp /> */}
+                {!isSubmit ? (
+                  <SignUp submitSignUp={submitSignUp} />
+                ) : (
+                  <SignUpSuccess />
+                )}
               </Modal>
             </form>
           </div>
