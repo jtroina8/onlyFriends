@@ -432,6 +432,8 @@ body {
 
 .sign-up__success {
   display: block;
+  color: black;
+  margin-top: 25rem;
 }
 
 /* End of Sign Up / Register Page */
