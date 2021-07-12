@@ -436,6 +436,10 @@ body {
   margin-top: 25rem;
 }
 
+.sign-up__success h3 {
+  text-decoration: none;
+}
+
 /* End of Sign Up / Register Page */
 
 /* Nav Bar */

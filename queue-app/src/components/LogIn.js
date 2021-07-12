@@ -24,10 +24,12 @@ export default function Login() {
             <form>
               <input type="text" placeholder="Username, Phone, or Email" />
               <input type="password" placeholder="Password" />
-              <button type="submit" className="log-in__btn">
-                Log In
-              </button>
-              <button
+              <Link to="/home">
+                <button type="submit" className="log-in__btn">
+                  Log In
+                </button>
+              </Link>
+              {/* <button
                 className="landing-sign-up"
                 onClick={() => setIsOpen(!modalIsOpen)}
               >
@@ -43,7 +45,7 @@ export default function Login() {
                 ) : (
                   <SignUpSuccess />
                 )}
-              </Modal>
+              </Modal> */}
             </form>
           </div>
         </div>
