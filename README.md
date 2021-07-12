@@ -11,16 +11,6 @@ There are plenty of answers. Facebook group, Discord server, ask on Reddit. None
 - Servers: It's great to find new friends, but when you live in West Coast USA, and your bestie is all the way in EU? No one wants to play with that kind of lag!
   I created OnlyFriends.gg to conquer these problems. To have a social medium for people to gather and talk about whataver is currently popular in their communities.
 
-### Screenshots
-
-<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/register.png" width="500" height="300">
-
-<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/login.png" width="500" height="300">
-
-<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/home.png" width="500" height="300">
-
-<img src="https://github.com/jtroina8/onlyFriends/blob/master/readme-imgs/profile.png" width="500" height="300">
-
 ### Tools/Technologies Used
 
 **Built With:**

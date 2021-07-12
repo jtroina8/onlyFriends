@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import SignUp from "./SignUp";
 import { useState } from "react";
+import SignUpSuccess from "./SignUpSuccess";
 
 export default function Landing() {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+  function submitSignUp() {
+    setIsSubmit(true);
+  }
   return (
     <section className="landing-page">
       {/* left side */}
@@ -20,7 +25,6 @@ export default function Landing() {
           <Link to="/login">
             <button className="landing-log-in">Log In</button>
           </Link>
-          {/* <Link to="/signup"> */}
           <button
             className="landing-sign-up"
             onClick={() => setIsOpen(!modalIsOpen)}
@@ -32,9 +36,12 @@ export default function Landing() {
             onRequestClose={() => setIsOpen(false)}
             className="Modal"
           >
-            <SignUp />
+            {!isSubmit ? (
+              <SignUp submitSignUp={submitSignUp} />
+            ) : (
+              <SignUpSuccess />
+            )}
           </Modal>
-          {/* </Link> */}
           <h4>You know you want to. ;)</h4>
         </div>
       </div>

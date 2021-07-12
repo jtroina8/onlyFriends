@@ -41,7 +41,6 @@ export default function validateInfo(userInfo) {
   if (!userInfo.phoneNumber) {
     errors.phoneNumber = "Phone Number Required";
   } else if (userInfo.phoneNumber.match(phoneRegex)) {
-    return true;
   } else {
     errors.phoneNumber = "Phone Number is invalid";
   }

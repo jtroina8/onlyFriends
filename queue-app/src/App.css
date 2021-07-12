@@ -329,10 +329,6 @@ body {
 
 /* End of Login Page */
 /* Sign Up || Register Page */
-.Modal {
-  background-color: green;
-}
-
 .sign-up {
   display: flex;
   align-items: center;
@@ -345,12 +341,18 @@ body {
   top: 50%;
   left: 50%;
   width: 50%;
-  height: 30rem;
+  padding: 10px;
   transform: translate(-50%, -50%);
+  background-color: rgba(97, 97, 97, 0.38);
+  border-radius: 3%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }
 
 .sign-up__container h2 {
   color: rgb(0, 0, 0);
+  grid-column: 1/3;
 }
 
 .sign-up__container input {
@@ -358,20 +360,36 @@ body {
   position: relative;
 }
 
-.sign-up__container p {
-  color: purple;
+.sign-up__errors-left {
+  color: #bd06ae;
+  grid-column: 1/3;
+}
+
+.sign-up__errors-right {
+  grid-column: 3/5;
+  color: #bd06ae;
+}
+
+.sign-up__errors-username {
+  grid-column: 1/5;
+  color: #bd06ae;
 }
 
 .sign-up__input-container {
   position: relative;
   margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.sign-up__input-container-username {
+  grid-column: 1/5;
 }
 
 .sign-up__input-container input {
   border: 0;
   border-bottom: 1px solid #555;
   background: transparent;
-  width: 50%;
   padding: 8px 0 5px 0;
   font-size: 16px;
 }
@@ -382,7 +400,7 @@ body {
 }
 
 .sign-up__input-container button {
-  width: 50%;
+  grid-column: 2/4;
   height: 50px;
   border: none;
   outline: none;
@@ -396,12 +414,24 @@ body {
   margin: 5px;
 }
 
+.sign-up__input-container-left {
+  grid-column: 1/3;
+}
+
+.sign-up__input-container-right {
+  grid-column: 3/5;
+}
+
 .sign-up__btn:hover {
   background-color: #bd06ae;
 }
 
 .sign-up__btn {
   color: #fff;
+}
+
+.sign-up__success {
+  display: block;
 }
 
 /* End of Sign Up / Register Page */

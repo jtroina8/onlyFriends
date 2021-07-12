@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import OnlyFriends from "./assets/images/OnlyFriends.png";
-// import { useHistory } from "react-router-dom";
-// import { setUser } from "../actions/newUserActions";
-// import { useDispatch } from "react-redux";
 import Modal from "react-modal";
 import SignUp from "./SignUp";
 import SignUpSuccess from "./SignUpSuccess";
 
 export default function Login() {
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-
   function submitSignUp() {
     setIsSubmit(true);
   }
@@ -26,11 +22,8 @@ export default function Login() {
           <h1>Log In to OnlyFriends</h1>
           <div className="log-in__input-container">
             <form>
-              <input
-                type="text"
-                placeholder="Please Enter 'Shrek' as Username"
-              />
-              <input type="password" placeholder="Password is 'myswamp123" />
+              <input type="text" placeholder="Username, Phone, or Email" />
+              <input type="password" placeholder="Password" />
               <button type="submit" className="log-in__btn">
                 Log In
               </button>
@@ -45,7 +38,6 @@ export default function Login() {
                 onRequestClose={() => setIsOpen(false)}
                 className="Modal"
               >
-                {/* <SignUp /> */}
                 {!isSubmit ? (
                   <SignUp submitSignUp={submitSignUp} />
                 ) : (
