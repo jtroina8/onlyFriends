@@ -54,12 +54,6 @@ export default function GameCard() {
               </div>
             </div>
           </div>
-          {/* <div className="val-card__user-comms">
-            <img
-              src="https://static.thenounproject.com/png/55394-200.png"
-              alt="no-mic-symbol"
-            />
-          </div> */}
         </div>
       </div>
     </div>
