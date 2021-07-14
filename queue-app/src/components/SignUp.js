@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
+import React from "react";
 import useForm from "./SignUpForm";
 import validate from "./ValidateInfo";
 // import { useDispatch } from "react-redux";
@@ -11,19 +10,6 @@ export default function SignUp({ submitSignUp }) {
     submitSignUp,
     validate
   );
-
-  let history = useHistory();
-  const routeToLogin = () => {
-    let path = <Link to="/login" />;
-    history.push(path);
-  };
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     routeToLogin();
-  //   }, 1000);
-  //   return () => clearTimeout(timer);
-  // }, []);
 
   return (
     <div className="sign-up">
@@ -114,11 +100,7 @@ export default function SignUp({ submitSignUp }) {
                 {errors.phoneNumber}
               </span>
             )}
-            <button
-              type="submit"
-              className="sign-up__btn"
-              onClick={routeToLogin}
-            >
+            <button type="submit" className="sign-up__btn">
               Sign Up
             </button>
           </div>

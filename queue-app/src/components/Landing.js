@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import SignUp from "./SignUp";
 import { useState } from "react";
 import SignUpSuccess from "./SignUpSuccess";
+import OnlyFriends from "./assets/images/OnlyFriends.png";
 
 export default function Landing() {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Landing() {
       {/* right */}
       <div className="landing-right">
         <div className="landing-middle-content">
-          <h1>Welcome to OnlyFriends!</h1>
+          <img src={OnlyFriends} alt="logo" />
           <Link to="/login">
             <button className="landing-log-in">Log In</button>
           </Link>
@@ -42,7 +43,10 @@ export default function Landing() {
               <SignUpSuccess />
             )}
           </Modal>
-          <h4>You know you want to. ;)</h4>
+          <div className="landing-motto">
+            <h4 className="landing-motto__left">No drama.</h4>
+            <h4 className="landing-motto__right">Only friends.</h4>
+          </div>
         </div>
       </div>
     </section>
