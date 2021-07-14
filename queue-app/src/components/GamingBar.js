@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollContainer from "react-indiana-drag-scroll";
 import val_boxart from "./assets/images/games/val_boxart.jpeg";
 import lol_boxart from "./assets/images/games/lol_boxart.jpeg";
 import apex_boxart from "./assets/images/games/apex_boxart.jpeg";
@@ -24,7 +25,7 @@ import RL_boxart from "./assets/images/games/RL_boxart.jpeg";
 export default function GamingBar({ setGame }) {
   return (
     <div>
-      <div className="game-bar">
+      <ScrollContainer className="game-bar">
         <img
           className="val_boxart"
           src={val_boxart}
@@ -51,7 +52,7 @@ export default function GamingBar({ setGame }) {
         <img className="gtav_boxart" src={gtav_boxart} alt="" />
         <img className="dota2_boxart" src={dota2_boxart} alt="" />
         <img className="KOcity_boxart" src={KOcity_boxart} alt="" />
-      </div>
+      </ScrollContainer>
       <div className="game-cards"></div>
     </div>
   );

@@ -965,7 +965,9 @@ body {
 .request__post {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .request__post:hover {
