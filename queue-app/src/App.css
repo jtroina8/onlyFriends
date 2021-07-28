@@ -447,6 +447,7 @@ body {
   justify-content: space-between;
   box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
 }
+
 .nav-bar a {
   text-decoration: none;
   font-weight: 600;
