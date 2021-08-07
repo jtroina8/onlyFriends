@@ -21,10 +21,6 @@ body {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   background: url("https://www.teahub.io/photos/full/137-1374700_colorful-laptop-wallpapers-free-stock-photos-desktop-neon.jpg");
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .landing-left-content div {
@@ -335,6 +331,12 @@ body {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .landing-left {
+    
   }
 }
 
