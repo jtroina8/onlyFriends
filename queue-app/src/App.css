@@ -8,6 +8,9 @@ body {
 }
 
 /* Landing Page */
+.delete-this {
+  color: #fff;
+}
 
 .landing-page {
   width: 100%;
