@@ -337,11 +337,11 @@ body {
   }
 }
 
-@media only screen and (max-width: 375px) {
+/* @media only screen and (max-width: 375px) {
   .landing-left {
     
   }
-}
+} */
 
 /* End of Login Page */
 /* Sign Up || Register Page */
